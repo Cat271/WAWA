@@ -61,7 +61,7 @@ namespace WAWA.Controllers
             admin.Eliminar(modelo);
             IEnumerable<equipo> lista = admin.Consultar();
             ViewBag.mensaje = "Se ha eliminado una casa";
-            return View("Index");
+            return View("Index", lista);
         }
 
         public ActionResult Disponibles()

@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Agregar equipo", "Guardar")
 </p>
 <table class="table">
     <tr>
@@ -29,17 +29,20 @@
             @Html.DisplayFor(modelItem => item.detalles)
         </td>
         <td>
-            <p>$@Html.DisplayFor(modelItem => item.precio)</p>
+            <p>$@Html.DisplayFor(modelItem => item.precio) MXN</p>
         </td>
         <td>
             <img src="@Html.DisplayFor(modelItem => item.foto)" width="170" />
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idEquipo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idEquipo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idEquipo })
+            @Html.ActionLink("Editar", "Modificar", new { id=item.idEquipo }) |
+            @Html.ActionLink("Ver más", "Detalles", new { id=item.idEquipo }) |
+            @Html.ActionLink("Borrar", "Eliminar", new { id=item.idEquipo })
         </td>
     </tr>
 }
 
 </table>
+<div>
+    @Html.ActionLink("<- Volver a Inicio", "Index", "Home")
+</div>
