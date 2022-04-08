@@ -4,11 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Equipos // Artículos disponibles</h2><br />
 
-<p>
-    @Html.ActionLink("Agregar equipo", "Guardar")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -23,21 +20,22 @@
         <th>Detalles</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.detalles)
-        </td>
-        <td>
-            <p>$@Html.DisplayFor(modelItem => item.precio) MXN</p>
-        </td>
-        <td>
-            <img src="@Html.DisplayFor(modelItem => item.foto)" width="170" />
-        </td>
-        <td>
-            <p>@Html.ActionLink("Editar", "Modificar", new { id = item.idEquipo }) |
-            @Html.ActionLink("Ver más", "Detalles", new { id = item.idEquipo }) |
-            @Html.ActionLink("Borrar", "Eliminar", new { id = item.idEquipo })</p>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.detalles)
+            </td>
+            <td>
+                <p>$@Html.DisplayFor(modelItem => item.precio) MXN</p>
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.foto)" width="170" />
+            </td>
+            <td>
+                <p>
+                    @Html.ActionLink("Ver más", "DetallesDisponibles", new { id = item.idEquipo })
+                </p>
             <br />
             <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_s-xclick">

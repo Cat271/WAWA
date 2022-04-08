@@ -70,5 +70,12 @@ namespace WAWA.Controllers
             ViewBag.mensaje = "";
             return View(lista);
         }
+
+        public ActionResult DetallesDisponibles(int id = 0)
+        {
+            equipo modelo = admin.Consultar(id);
+            ViewBag.mensaje = "";
+            return View(modelo);
+        }
     }
 }

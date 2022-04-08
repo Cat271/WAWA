@@ -1,7 +1,7 @@
 ﻿@model WAWA.Models.equipo
 
 @{
-    ViewBag.Title = "Detalles";
+    ViewBag.Title = "DetallesDisponibles";
 }
 
 <h2>Detalles</h2>
@@ -45,7 +45,8 @@
 
         </dd>
     </dl>
-</div><br />
+</div>
+<br />
 <h3>Síguenos en Facebook</h3>
 <p>Regálanos un 'Me Gusta' y compártenos</p>
 <div id="fb-root"></div>
@@ -53,6 +54,5 @@
 <div class="fb-like" data-href="https://www.facebook.com/CompuJuarezOficial/" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
 <br />
 <p>
-    @Html.ActionLink("Editar", "Modificar", new { id = Model.idEquipo }) |
-    @Html.ActionLink("<- Regresar", "Index")
+    @Html.ActionLink("<- Regresar", "Disponibles")
 </p>
