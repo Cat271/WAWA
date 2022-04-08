@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WAWA.Models.equipo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.detalles)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.foto)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.detalles)
+        </td>
+        <td>
+            <p>$@Html.DisplayFor(modelItem => item.precio)</p>
+        </td>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.foto)" width="170" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idEquipo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idEquipo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idEquipo })
+        </td>
+    </tr>
+}
+
+</table>
