@@ -53,7 +53,7 @@ namespace WAWA.Dato
         /// <param name="modelo">datos de un equipo</param>
         public void Modificar(equipo modelo)
         {
-            using (DWI_U4Entities contexto = new DWI_U4Entities)
+            using (DWI_U4Entities contexto = new DWI_U4Entities())
             {
                 contexto.Entry(modelo).State = EntityState.Modified;
                 contexto.SaveChanges();
